@@ -54,35 +54,3 @@ M=D          // Store D (result or original value) in R1
 (END)
 @END
 0;JMP        // Infinite loop to end program
-// Load values into registers
-@A
-D=M
-@B
-D=D+M
-@C
-D=D-M
-@result
-M=D
-@A
-D=M
-@B
-D=D+M
-@result
-M=D
-// Check for overflow
-@32767
-D=A
-@result
-D=D-M
-@NO_OVERFLOW
-D;JGT
-@OVERFLOW
-0;JMP
-{NO_OVERFLOW}
-// Continue with no overflow
-{OVERFLOW}
-// Handle overflow
-
-
-
-
